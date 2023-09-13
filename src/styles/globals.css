@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px #f5f5f5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e84545;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: red;
+}
+
+@layer components {
+  .navbar .menu-icon .navicon:before,
+  .navbar .menu-icon .navicon:after {
+    @apply bg-slate-900 dark:bg-white block h-full w-full absolute transition-all;
+    content: '';
+  }
+
+  .navbar .menu-icon .navicon:before {
+    @apply top-[5px];
+  }
+
+  .navbar .menu-icon .navicon:after {
+    @apply -top-[5px];
+  }
+}
+
+.navbar .menu-btn {
+  @apply hidden;
+}
+
+.navbar .menu-btn:checked ~ .menu {
+  @apply max-h-[280px] bg-slate-100 dark:bg-slate-900;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon {
+  @apply bg-transparent;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon:before {
+  @apply -rotate-45;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon:after {
+  @apply rotate-45;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  @apply top-0;
+}
+
+/* 
+@layer components {
+  .navbar {
+    @apply bg-slate-900 fixed w-full z-[3] h-16;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar ul {
+    @apply m-0 p-0 overflow-hidden;
+  }
+
+  .navbar li a {
+    @apply block p-5 text-end leading-4;
+  }
+
+  .navbar .logo {
+    @apply block float-left px-5 my-auto mx-0 leading-[4rem];
+  }
+
+  .navbar .menu {
+    @apply clear-both max-h-0 transition-all;
+  }
+
+  .navbar .menu-icon {
+    @apply cursor-pointer inline-block float-right relative select-none px-5 py-7;
+  }
+
+  .navbar .menu-icon .navicon {
+    @apply bg-white block h-[2px] relative w-[18px] transition-all
+  }
+
+  .navbar .menu-icon .navicon:before,
+  .navbar .menu-icon .navicon:after {
+    @apply bg-white block h-full w-full absolute transition-all;
+    content: '';
+  }
+
+  .navbar .menu-icon .navicon:before {
+    @apply top-[5px];
+  }
+
+  .navbar .menu-icon .navicon:after {
+    @apply -top-[5px];
+  }
+
+  @media (min-width: 768px) {
+    .navbar {
+      @apply h-24;
+    }
+
+    .navbar .logo {
+      @apply text-2xl leading-[6rem] py-0;
+    }
+
+    .navbar li {
+      @apply float-left;
+    }
+    .navbar li a {
+      @apply leading-[6rem] p-0;
+    }
+    .navbar .menu {
+      @apply clear-none float-right max-h-none mr-5;
+    }
+    .navbar .menu-icon {
+      @apply hidden;
+    }
+  }
+}
+
+.navbar .menu-btn {
+  @apply hidden;
+}
+
+.navbar .menu-btn:checked ~ .menu {
+  @apply max-h-[240px] bg-slate-900;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon {
+  @apply bg-transparent;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon:before {
+  @apply -rotate-45;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon:after {
+  @apply rotate-45;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  @apply top-0;
+} */
+
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
